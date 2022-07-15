@@ -1,4 +1,6 @@
-To settup app run:
+## Start App
+
+To setup app run:
 ```bash
 npm install
 npm run dev
