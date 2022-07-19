@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { useForm } from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
+import ImageUploader from '../../components/ImageUploader'
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 
@@ -80,7 +81,7 @@ function PostForm({ defaultValues, postRef, preview }) {
       )}
 
       <div className={preview ? styles.hidden : styles.controls}>
-  
+        <ImageUploader/>
         <textarea {...register('content', { maxLength: { value: 20000, message: 'content is too long' }, minLength: { value: 10, message: 'content is too short' }, required: { value: true, message: 'content is required'}})} > </textarea>
         {errors && <p className="text-danger">{errors.content.message}</p>}
         <fieldset>
